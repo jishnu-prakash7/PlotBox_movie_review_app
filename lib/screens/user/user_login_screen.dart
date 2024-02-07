@@ -125,7 +125,6 @@ class _UserLoginState extends State<UserLogin> {
                                   final email =
                                       emailcontroller.text.toLowerCase();
                                   final password = passwordcontroller.text;
-
                                   for (var i = 0; i < userBox.length; i++) {
                                     final storedUser = getUserAt(i);
                                     if (storedUser.email.toLowerCase() ==

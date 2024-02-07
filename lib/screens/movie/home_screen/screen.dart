@@ -4,7 +4,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:plotbox/screens/movie/drawer.dart';
 import 'package:plotbox/screens/movie/function.dart';
 import 'package:plotbox/screens/movie/home_screen/widgets.dart';
-// import 'package:plotbox/widgets/admin_module_ref.dart';
 import 'package:plotbox/widgets/home_and_details_ref.dart';
 import 'package:plotbox/widgets/main_refactoring.dart';
 
@@ -129,13 +128,20 @@ class _HomeScreenState extends State<HomeScreen> {
           ValueListenableBuilder(
             valueListenable: moviesBox.listenable(),
             builder: (context, box, child) => searchMovie.isEmpty
-                ? Center(
-                    child: Text(
-                      'No movies found',
-                      style: GoogleFonts.ubuntu(
-                          textStyle: const TextStyle(
-                              color: Colors.white, fontSize: 18)),
-                    ),
+                ? Column(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * .3,
+                      ),
+                      Center(
+                        child: Text(
+                          'No movies found',
+                          style: GoogleFonts.ubuntu(
+                              textStyle: const TextStyle(
+                                  color: Colors.white, fontSize: 18)),
+                        ),
+                      ),
+                    ],
                   )
                 : Expanded(
                     child: ListView.builder(
@@ -154,7 +160,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
           ),
         ]),
-        // floatingActionButton: adminPanelFloatingActionButton(context),
       ),
     );
   }

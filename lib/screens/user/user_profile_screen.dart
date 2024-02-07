@@ -34,7 +34,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     final sharedprefs = await SharedPreferences.getInstance();
     final loggedInUserIndex = sharedprefs.getInt('loggedInUserIndexKey');
     final user = userBox.getAt(loggedInUserIndex!) as User;
-    setState(() {
+    setState(() { 
       loggedInUser = user;
       index = loggedInUserIndex;
     });
